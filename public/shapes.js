@@ -14,8 +14,8 @@ const origin = {x: 0, y: 0, z: 0}
 const sizeOne = {width: 1, height: 1, depth: 1}
 
 let camera = {
-  translation: {x: -45, y: 0, z: 21},
-  rotation: {x: 40, y: 235, z: 0}
+  translation: {x: 0, y: 0, z: 100},
+  rotation: {x: 0, y: 0, z: 0}
 }
 
 let lightSource = [0.4, 0.3, 0.5]
