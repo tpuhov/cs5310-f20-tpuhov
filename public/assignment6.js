@@ -111,7 +111,7 @@ const updateFieldOfView = (event) => {
  // lookAt declarations
 const up = [0, 1, 0]
 let target = [0, 0, 0]
-let lookAt = true
+let lookAt = false
 
 // Render the  screen
 const render = () => {

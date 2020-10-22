@@ -82,11 +82,11 @@ const webglUtils = {
       render()
   },
     updateCameraTranslation: (event, axis) => {
-      camera.translation[axis] = event.target.value
+      camera.translation[axis] = parseFloat(event.target.value)
       render()
     },
     updateCameraRotation: (event, axis) => {
-      camera.rotation[axis] = event.target.value
+      camera.rotation[axis] = parseFloat(event.target.value)
       render();
     },
     updateLookAtTranslation: (event, index) => {
@@ -95,6 +95,11 @@ const webglUtils = {
     },
     firstPersonCameraTranslation: (amount, axis) => {
       camera.translation[axis] += amount
+
+      document.getElementById("ctx").value = parseFloat(camera.translation.x)
+      document.getElementById("cty").value = parseFloat(camera.translation.y)
+      document.getElementById("ctz").value = parseFloat(camera.translation.z)
+
       render()
     },
     firstPersonCameraRotation: (amount, axis) => {
