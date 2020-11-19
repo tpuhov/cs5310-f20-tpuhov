@@ -1,9 +1,15 @@
-const drawScene = (gl, parameters, buffers) => {
+let squareRotation = 0.0;
+
+const drawScene = (gl, parameters, buffers, deltaTime) => {
   clearScene(gl);
   const projectionMatrix = createProjectionMatrix(gl);
   const modelViewMatrix = glMatrix.mat4.create();
 
   glMatrix.mat4.translate(modelViewMatrix, modelViewMatrix, [-0.0, 0.0, -6.0]);
+  glMatrix.mat4.rotate(modelViewMatrix, modelViewMatrix, squareRotation, [0, 0, 1]);
+
+  squareRotation += deltaTime;
+
   configurePositionBufferRead(gl, buffers, parameters);
   configureColorBufferRead(gl, buffers, parameters);
   gl.useProgram(parameters.program);
